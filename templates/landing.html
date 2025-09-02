@@ -5,12 +5,23 @@
         <title>Welcome!</title>
         <meta name="description" content="Landing page for our home website">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="../static/styles.css">
+        <link rel="stylesheet" href="../static/css/styles.css">
     </head>
     <body>
-        <h1>Welcome to our home website!</h1>
-        
-        <h3>Choose what you would like to read:</h3>
+        <div class="whole">
+
+            <h1>Welcome to our home website!</h1>
+
+            <div class="navbar">
+                <a href="/">Home</a>
+                <a href="/books">Books</a>
+            </div>
+
+            <div class="main">
+            {% block body %}{% endblock %}
+            </div>
+
+        </div>
 
     </body>
 </html>
