@@ -1,16 +1,16 @@
 @font-face {
   font-family: "london";
-  src: url("fonts/oldlondon.ttf") format("truetype");
+  src: url("../fonts/oldlondon.ttf") format("truetype");
 }
 
 @font-face {
   font-family: "cloister";
-  src: url("fonts/CloisterBlack.ttf") format("truetype");
+  src: url("../fonts/CloisterBlack.ttf") format("truetype");
 }
 
 @font-face {
   font-family: "chancery";
-  src: url("fonts/BLKCHCRY.TTF") format("truetype");
+  src: url("../fonts/BLKCHCRY.TTF") format("truetype");
 }
 
 body {
