@@ -20,11 +20,16 @@ body {
     text-align: center;
 }
 
+h1 {
+  font-size: 400%;
+}
+
 .navbar a {
   color: white;
   text-align: center;
-  padding: 14px 20px;
+  padding: 15px 30px;
   font-family: chancery, serif, Arial, Helvetica, sans-serif;
+  font-size: 110%;
   text-decoration: none;
   border-style: double;
   border-color: black;

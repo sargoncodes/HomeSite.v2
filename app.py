@@ -3,13 +3,13 @@ from sys import argv
 #import os
 
 if (len(argv) < 3 or len(argv) > 4):
-    print("\n[X] Error: Incorrect number of arguments\nUsage: __init__.py <Listener IP> <Listening Port> [debug] \n")
+    print("\n[X] Error: Incorrect number of arguments\nUsage: python3 app.py <Listener IP> <Listening Port> [debug] \n")
     quit()
 elif (len(argv) == 4) and (str(argv[3]).upper() == "DEBUG"):
     db=True
 else:
     db=False
-
+    from waitress import serve
 
 app = Flask(__name__)
 ip = str(argv[1])
@@ -27,4 +27,7 @@ def books():
 def send_test():
     return send_from_directory(app.config['static/media/books'], 'test.pdf')
 
-if __name__ == "__main__": app.run(debug=db, host=ip, port=port)
+if __name__ == "__main__": 
+    if db: app.run(debug=True, host=ip, port=port)
+    elif not db: serve(app, host=ip, port=port)
+    else: print("\n[X] Error: Something went seriously wrong, this should not happen\n")

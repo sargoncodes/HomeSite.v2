@@ -1,27 +1,9 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="utf-8">
-        <title>Welcome!</title>
-        <meta name="description" content="Landing page for our home website">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="../static/css/styles.css">
-    </head>
-    <body>
-        <div class="whole">
+{% extends "base.html" %}
 
-            <h1>Welcome to our home website!</h1>
-
-            <div class="navbar">
-                <a href="/">Home</a>
-                <a href="/books">Books</a>
-            </div>
-
-            <div class="main">
-            {% block body %}{% endblock %}
-            </div>
-
-        </div>
-
-    </body>
-</html>
+{% block body %}
+<div class="body">
+    <p></p>
+    <h2>Under development</h2>
+    <p>Pictures of Phillip and Beef will go here.</p>
+</div>
+{% endblock %}
