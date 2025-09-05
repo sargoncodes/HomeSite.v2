@@ -1,9 +1,12 @@
 {% extends "base.html" %}
 
+
 {% block body %}
 <div class="body">
-        <br>
-        <a href="../static/media/books/test.pdf">Test</a>
-        <br>
+        <div class="links">
+        {% for file in files %}
+                <li><a href="{{ url_for('view_book', filename=file) }}" target="_blank">{{ file }}</a></li>
+        {% endfor %}      
+        </div> 
 </div>
 {% endblock %}

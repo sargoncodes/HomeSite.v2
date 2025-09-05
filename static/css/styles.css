@@ -13,9 +13,21 @@
   src: url("../fonts/BLKCHCRY.TTF") format("truetype");
 }
 
+a:link, a:visited {
+  background-color: #101010;
+  color: white;
+  padding: 14px 25px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  border-style: double;
+  border-color: black;
+}
+
+
 body {
-    background-color: #101010;
     color: #8f7762;
+    background-color: #101010;
     font-family: chancery, serif, Arial, Helvetica, sans-serif;
     text-align: center;
 }
@@ -31,8 +43,6 @@ h1 {
   font-family: chancery, serif, Arial, Helvetica, sans-serif;
   font-size: 110%;
   text-decoration: none;
-  border-style: double;
-  border-color: black;
 }
 
 .navbar a:hover {

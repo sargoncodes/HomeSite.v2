@@ -1,6 +1,7 @@
 from flask import Flask, render_template, send_from_directory
 from sys import argv
-#import os
+import os
+import mimetypes
 
 if (len(argv) < 3 or len(argv) > 4):
     print("\n[X] Error: Incorrect number of arguments\nUsage: python3 app.py <Listener IP> <Listening Port> [debug] \n")
@@ -21,11 +22,25 @@ def landing():
 
 @app.route("/books", methods=["GET"])
 def books():
-    return render_template("books.html")  
+    file_dir = os.path.join(app.root_path, 'static', 'media', 'books')
+    
+    files = os.listdir(file_dir)
+    
+    files = [f for f in files if os.path.isfile(os.path.join(file_dir, f))]
+    
+    return render_template("books.html", files=files)  
 
-@app.route('/books/test.pdf')
-def send_test():
-    return send_from_directory(app.config['static/media/books'], 'test.pdf')
+@app.route("/books/<path:filename>")
+def view_book(filename):
+    file_dir = os.path.join(app.root_path, 'static', 'media', 'books')
+    filepath = os.path.join(file_dir, filename)
+    
+    mime_type, _ = mimetypes.guess_type(filepath)
+    
+    if mime_type is None:
+        mime_type = 'application/octet-stream'
+        
+    return send_from_directory(file_dir, filename, mimetype=mime_type)
 
 if __name__ == "__main__": 
     if db: app.run(debug=True, host=ip, port=port)
