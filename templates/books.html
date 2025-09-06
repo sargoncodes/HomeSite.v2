@@ -3,10 +3,16 @@
 
 {% block body %}
 <div class="body">
-        <div class="links">
-        {% for file in files %}
-                <li><a href="{{ url_for('view_book', filename=file) }}" target="_blank">{{ file }}</a></li>
-        {% endfor %}      
+        <div class="dropdown">
+
+                <nav><ul id="bookMenu"> 
+                {% for file in files %}
+                     
+                        <li><a href="{{ url_for('view_book', filename=file) }}" target="_blank">{{ file }}</a></li><br>
+                
+                {% endfor %}  
+                </nav></ul>    
+
         </div> 
 </div>
 {% endblock %}

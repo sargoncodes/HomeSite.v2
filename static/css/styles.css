@@ -13,17 +13,17 @@
   src: url("../fonts/BLKCHCRY.TTF") format("truetype");
 }
 
-a:link, a:visited {
-  background-color: #101010;
-  color: white;
-  padding: 14px 25px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  border-style: double;
-  border-color: black;
-}
 
+
+nav ul {
+  height:500px;
+  min-height:200px;
+  max-height: auto;
+  overflow: auto;
+  overflow-y: scroll;
+  scrollbar-color: #101010 #8d7662;
+  list-style-type: none;
+}
 
 body {
     color: #8f7762;
@@ -38,11 +38,15 @@ h1 {
 
 .navbar a {
   color: white;
-  text-align: center;
-  padding: 15px 30px;
   font-family: chancery, serif, Arial, Helvetica, sans-serif;
   font-size: 110%;
   text-decoration: none;
+  background-color: #101010;
+  padding: 14px 25px;
+  text-align: center;
+  display: inline-block;
+  border-style: double;
+  border-color: black;
 }
 
 a:hover {
